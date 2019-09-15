@@ -1,0 +1,56 @@
+{
+  "name": "package-name",
+  "version": "1.0.0",
+  "author": "Charles Stover <PACKAGE-NAME@charlesstover.com>",
+  "description": "DESCRIPTION",
+  "homepage": "https://www.npmjs.com/package/PACKAGE-NAME",
+  "main": "./dist/index.js",
+  "repository": "https://github.com/CharlesStover/PACKAGE-NAME",
+  "types": "./dist/index.d.ts",
+  "bugs": {
+    "email": "PACKAGE-NAME@charlesstover.com",
+    "url": "https://github.com/CharlesStover/PACKAGE-NAME/issues"
+  },
+  "directories": {
+    "lib": "src"
+  },
+  "files": [
+    "dist",
+    "package.json",
+    "README.md"
+  ],
+  "scripts": {
+    "clean": "rm -rf build dist node_modules",
+    "prepublishOnly": "webpack",
+    "test": "jest",
+    "test-watch": "jest --watch"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@types/jest": "^23.0.0",
+    "@types/node": "^11.0.0",
+    "@types/react": "^16.3.0",
+    "@types/react-dom": "^16.3.0",
+    "@typescript-eslint/eslint-plugin": "^1.0.0",
+    "@typescript-eslint/parser": "^1.0.0",
+    "configure-webpack": "^1.0.2",
+    "eslint": "^5.0.0",
+    "eslint-config-prettier": "^4.0.0",
+    "eslint-plugin-prettier": "^3.0.0",
+    "eslint-plugin-react": "^7.0.0",
+    "eslint-plugin-react-hooks": "^1.0.0",
+    "husky": "^2.0.0",
+    "jest": "^24.0.0",
+    "lint-staged": "^8.0.0",
+    "prettier": "^1.0.0",
+    "react": "^16.8.0",
+    "react-dom": "^16.8.0",
+    "ts-jest": "^24.0.0",
+    "webpack": "^4.0.0",
+    "webpack-cli": "^3.0.0"
+  },
+  "peerDependencies": {
+    "react": "^16.8.0",
+    "react-dom": "^16.8.0"
+  }
+}
