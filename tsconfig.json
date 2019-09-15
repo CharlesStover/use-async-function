@@ -15,7 +15,7 @@
     "forceConsistentCasingInFileNames": true,
     "inlineSourceMap": false,
     "jsx": "react",
-    "lib": ["dom", "es5"],
+    "lib": ["dom", "es5", "es2015.promise", "es2017"],
     "module": "commonjs",
     "moduleResolution": "node",
     "noFallthroughCasesInSwitch": true,

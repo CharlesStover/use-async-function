@@ -4,13 +4,13 @@ branches:
   only: master
 cache: yarn
 install:
-  - yarn
+- yarn
 script:
-  - yarn build
-  - yarn test
+- yarn build
+- yarn test
 deploy:
   api_key:
-    secure:
+    secure: JB7H3o4kMPytKPN3Lv2qYAfA5JeAzajVkN5ercusSawnZ0yQMERqUFSBGE7DWpxAg0M5CLu3zIcDCMX4TsevrjZIGA/mRuvM7dhHGKyS1N3UCrXjX+A0QT1mC6hSIBAseFEEaagGN0zR4Cg74e3Gqh37+D27VTjioMADw/pjOG2IQi/QmPYjKwAqYMTfGSuvdzLEOMDt+YzSw5XR5pzQk4CpvGmTM1L63cUp4Pkixc1CkrP/NXpQqHJG07nBzMnjlurw5dGhEux4hzAUMwCGOVnqYxslMN6ejRuJ0UnL/fTOGyGY++zERfsq3zAARKQBbALXWzx46sqO/4k5Z6HVhnUZuLTNPvL7+BvIQ0vpF3RyK9dESIbM0E0vTzdn3WGpFv9Nj1lSmgcsBqddMHjYjPK+mICGDdr+tsRUndjI1YYOxog4zJjTpBdj6zQBiVaacFTzF4RX1afplUdt7GbBc6OLLIjRKKACEzAdq1EH4fGyOBedWvxb/2rcan6LbwBoB/6hJNcz7PhTaDFRglRst+uL1/8+N8MnnKzZ0nThoZJw2d5jKdc9UmUO1b2ah+IhllWBiNI89mgeYzHm7jLRFUgF97Ddx/flFWnLsDI1DWnPIGZ6k02h4o5bLAkKyS71QnMU3bZdysOLMxtlFUzvi8qiFcZqoKDtyAVAI+7Dfpw=
   email: npmjs@charlesstover.com
   on:
     branch: master
