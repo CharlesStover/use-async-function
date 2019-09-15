@@ -6,5 +6,4 @@
 /jest
 /node_modules
 /.env
-/yarn.lock
 /yarn-error.log
