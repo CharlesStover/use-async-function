@@ -1,3 +1,3 @@
 const configureWebpack = require('configure-webpack');
 
-export default configureWebpack({ typescript: true });
+module.exports = configureWebpack({ typescript: true });

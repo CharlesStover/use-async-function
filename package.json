@@ -20,6 +20,7 @@
     "README.md"
   ],
   "scripts": {
+    "build": "npm run prepublishOnly",
     "clean": "rm -rf build dist node_modules",
     "prepublishOnly": "webpack",
     "test": "jest",
