@@ -1,3 +1,4 @@
+/* eslint @typescript-eslint/no-explicit-any: 0 */
 import { Reducer, useMemo, useReducer } from 'react';
 import AsyncFunction from './types/async-function';
 import AsyncFunctionState from './types/async-function-state';

@@ -7,5 +7,5 @@ export default interface ReducedStatefulAsyncFunction<
   T,
   E = Error
 > extends AsyncFunction<A, T> {
-  [id: string]: AsyncFunctionState<T, E>;
+  [id: string]: AsyncFunctionState<T, E> | void;
 }
