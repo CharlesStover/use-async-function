@@ -1,5 +1,12 @@
 /* eslint @typescript-eslint/no-explicit-any: 0 */
-import { Reducer, useMemo, useReducer } from 'react';
+import {
+  Reducer,
+  MutableRefObject,
+  useEffect,
+  useMemo,
+  useReducer,
+  useRef,
+} from 'react';
 import AsyncFunction from './types/async-function';
 import AsyncFunctionState from './types/async-function-state';
 import ReducedStatefulAsyncFunction from './types/reduced-stateful-async-function';
@@ -18,6 +25,8 @@ interface OptionsThrowErrorFalse {
 interface OptionsThrowErrorTrue {
   throwError: true;
 }
+
+type VoidFunction = () => void;
 
 const DEFAULT_OPTIONS: Options = Object.create(null);
 const DEFAULT_REDUCER: AsyncFunctionIdReducer<any[]> = (): '_' => '_';
@@ -98,6 +107,8 @@ export default function useAsyncFunction<
     Reducer<Map<string, AsyncFunctionState<T, E>>, Action<T, E>>
   >(asyncFunctionReducer, new Map<string, AsyncFunctionState<T, E>>());
 
+  const mounted: MutableRefObject<boolean> = useRef(true);
+
   const call:
     | ReducedStatefulAsyncFunction<A, T | undefined, E>
     | StatefulAsyncFunction<A, T | undefined, E> = useMemo(():
@@ -111,31 +122,39 @@ export default function useAsyncFunction<
       const id: string = reducer(...args);
 
       // Pending
-      setState({
-        error: undefined,
-        id,
-        state: State.PENDING,
-        value: undefined,
-      });
+
+      if (mounted.current) {
+        setState({
+          error: undefined,
+          id,
+          state: State.PENDING,
+          value: undefined,
+        });
+      }
+
       try {
         const aValue: T = await asyncFunction(...args);
 
         // Fulfilled
-        setState({
-          error: undefined,
-          id,
-          state: State.FULFILLED,
-          value: aValue,
-        });
+        if (mounted.current) {
+          setState({
+            error: undefined,
+            id,
+            state: State.FULFILLED,
+            value: aValue,
+          });
+        }
         return aValue;
       } catch (e) {
         // Rejected
-        setState({
-          error: e,
-          id,
-          state: State.REJECTED,
-          value: undefined,
-        });
+        if (mounted.current) {
+          setState({
+            error: e,
+            id,
+            state: State.REJECTED,
+            value: undefined,
+          });
+        }
 
         // If we are explicitly told to throw an error, do so.
         if (options.throwError === true) {
@@ -161,7 +180,13 @@ export default function useAsyncFunction<
     }
 
     return call;
-  }, [asyncFunction, options.throwError, reducer, state]);
+  }, [asyncFunction, mounted, options.throwError, reducer, state]);
+
+  useEffect((): VoidFunction => {
+    return (): void => {
+      mounted.current = false;
+    };
+  }, []);
 
   return call;
 }
