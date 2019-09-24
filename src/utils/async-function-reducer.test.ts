@@ -15,7 +15,7 @@ describe('asyncFunctionReducer', (): void => {
       {
         error: undefined,
         id: TEST_ID,
-        state: State.FULFILLED,
+        state: State.Fulfilled,
         value: TEST_VALUE,
       },
     );

@@ -62,7 +62,7 @@ describe('useAsyncFunction', (): void => {
           throw new Error('State was not created.');
         }
         expect(current.error).toBeUndefined();
-        expect(current.state).toBe(State.PENDING);
+        expect(current.state).toBe(State.Pending);
         expect(current.value).toBeUndefined();
 
         await act(
@@ -76,7 +76,7 @@ describe('useAsyncFunction', (): void => {
           throw new Error('State was lost.');
         }
         expect(current.error).toBeUndefined();
-        expect(current.state).toBe(State.FULFILLED);
+        expect(current.state).toBe(State.Fulfilled);
         expect(current.value).toBe(TEST_STR);
       });
     });
@@ -124,7 +124,7 @@ describe('useAsyncFunction', (): void => {
           promise = result.current(TEST_STR);
         });
         expect(result.current.error).toBeUndefined();
-        expect(result.current.state).toBe(State.PENDING);
+        expect(result.current.state).toBe(State.Pending);
         expect(result.current.value).toBeUndefined();
 
         await act(
@@ -133,7 +133,7 @@ describe('useAsyncFunction', (): void => {
           },
         );
         expect(result.current.error).toBeUndefined();
-        expect(result.current.state).toBe(State.FULFILLED);
+        expect(result.current.state).toBe(State.Fulfilled);
         expect(result.current.value).toBe(TEST_STR);
       });
     });

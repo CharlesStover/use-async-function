@@ -5,18 +5,18 @@ export default AsyncFunctionState;
 
 interface Fulfilled<T> {
   error: undefined;
-  state: State.FULFILLED;
+  state: State.Fulfilled;
   value: T;
 }
 
 interface Pending {
   error: undefined;
-  state: State.PENDING;
+  state: State.Pending;
   value: undefined;
 }
 
 interface Rejected<E> {
   error: E;
-  state: State.REJECTED;
+  state: State.Rejected;
   value: undefined;
 }

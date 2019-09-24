@@ -127,7 +127,7 @@ export default function useAsyncFunction<
         setState({
           error: undefined,
           id,
-          state: State.PENDING,
+          state: State.Pending,
           value: undefined,
         });
       }
@@ -140,7 +140,7 @@ export default function useAsyncFunction<
           setState({
             error: undefined,
             id,
-            state: State.FULFILLED,
+            state: State.Fulfilled,
             value: aValue,
           });
         }
@@ -151,7 +151,7 @@ export default function useAsyncFunction<
           setState({
             error: e,
             id,
-            state: State.REJECTED,
+            state: State.Rejected,
             value: undefined,
           });
         }

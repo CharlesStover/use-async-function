@@ -28,11 +28,11 @@ function MyComponent() {
     dispatch();
   }
 
-  if (dispatch.state === State.FULFILLED) {
+  if (dispatch.state === State.Fulfilled) {
     return <div>The response was {dispatch.value}.</div>;
   }
 
-  if (dispatch.state === State.REJECTED) {
+  if (dispatch.state === State.Rejected) {
     return <div>An error occurred: {dispatch.error}</div>;
   }
 
@@ -100,7 +100,7 @@ function MyComponent() {
   }
 
   // The state of the call is stored on the property with the call's ID.
-  if (dispatch.admin.state === State.FULFILLED) {
+  if (dispatch.admin.state === State.Fulfilled) {
     return <div>Admin loaded with {dispatch.admin.value}.</div>;
   }
 }

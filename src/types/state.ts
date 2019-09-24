@@ -1,7 +1,7 @@
 enum State {
-  FULFILLED = 'FULFILLED',
-  PENDING = 'PENDING',
-  REJECTED = 'REJECTED',
+  Fulfilled = 'FULFILLED',
+  Pending = 'PENDING',
+  Rejected = 'REJECTED',
 }
 
 export default State;
