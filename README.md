@@ -120,3 +120,9 @@ requiring a `.catch` block.
 If `false`, the asynchronous function will swallow any errors. The component
 will rerender, and the `error` property of the async function will be set to the
 caught error.
+
+## Sponsor 💗
+
+If you are a fan of this project, you may
+[become a sponsor](https://github.com/sponsors/CharlesStover)
+via GitHub's Sponsors Program.
