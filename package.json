@@ -1,6 +1,6 @@
 {
   "name": "use-async-function",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "author": "Charles Stover <use-async-function@charlesstover.com>",
   "description": "A React hook for integrating asynchronous function state into React function component state.",
   "homepage": "https://www.npmjs.com/package/use-async-function",
